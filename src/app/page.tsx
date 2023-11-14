@@ -41,16 +41,20 @@ export default function HomePage() {
             </Link>
           </li>
           <li className="w-2/3 sm:w-5/6 flex flex-col items-center">
-            <div className="border border-solid border-slate-300 py-6 px-2 rounded-3xl shadow-xl">
-              <Image alt="Consoles" src="/consoles.webp" height={500} width={500} />
-            </div>
-            <h3 className="text-3xl py-4 text-center">Consolas</h3>
+            <Link href="/products/consoles">
+              <div className="border border-solid border-slate-300 py-6 px-2 rounded-3xl shadow-xl">
+                <Image alt="Consoles" src="/consoles.webp" height={500} width={500} />
+              </div>
+              <h3 className="text-3xl py-4 text-center">Consolas</h3>
+            </Link>
           </li>
           <li className="w-2/3 sm:w-5/6 flex flex-col items-center">
-            <div className="border border-solid border-slate-300 py-6 px-2 rounded-3xl shadow-xl">
-              <Image alt="Accessories" src="/accessories.webp" height={500} width={500} />
-            </div>
-            <h3 className="text-3xl py-4 text-center">Accesorios</h3>
+            <Link href="/products/accessories">
+              <div className="border border-solid border-slate-300 py-6 px-2 rounded-3xl shadow-xl">
+                <Image alt="Accessories" src="/accessories.webp" height={500} width={500} />
+              </div>
+              <h3 className="text-3xl py-4 text-center">Accesorios</h3>
+            </Link>
           </li>
         </ul>
       </section>
@@ -70,7 +74,7 @@ export default function HomePage() {
             placeholder="Tu email"
             className="w-full my-4 text-black text-xl p-1 rounded-xl border border-solid"
           ></input>
-          <SubscribeButton />
+          <SubscribeButton text="Suscribite!" />
         </form>
       </section>
     </main>
