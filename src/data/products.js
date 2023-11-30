@@ -2,7 +2,7 @@ export const mockData = [
   {
     title: 'Gameflow Black',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 1000,
     slug: 'gameflow-black',
     image: '/gameflow-black.webp',
@@ -11,7 +11,7 @@ export const mockData = [
   {
     title: 'Playbox XZ Gold Edition',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 1000,
     slug: 'playbox-xz-gold-edition',
     image: '/playbox-xz-gold-edition.webp',
@@ -20,7 +20,7 @@ export const mockData = [
   {
     title: 'Veritas VR Set',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 630,
     slug: 'veritas-vr-set',
     image: '/veritas-vr-set.webp',
@@ -29,7 +29,7 @@ export const mockData = [
   {
     title: 'Gameflow',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 580,
     slug: 'gameflow',
     image: '/gameflow.webp',
@@ -38,7 +38,7 @@ export const mockData = [
   {
     title: 'Playbox XZ',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 580,
     slug: 'playbox-xz',
     image: '/playbox-xz.webp',
@@ -47,7 +47,7 @@ export const mockData = [
   {
     title: 'Wave Gen RX',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 580,
     slug: 'wave-gen-rx',
     image: '/wave-gen-rx.webp',
@@ -56,7 +56,7 @@ export const mockData = [
   {
     title: 'L503 Headset',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 30,
     slug: 'l503-headset',
     image: '/l503-headset.webp',
@@ -65,7 +65,7 @@ export const mockData = [
   {
     title: 'Echo Headset',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 40,
     slug: 'echo-headset',
     image: '/echo-headset.webp',
@@ -74,7 +74,7 @@ export const mockData = [
   {
     title: 'Impact Gaming Chair',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 160,
     slug: 'impact-gaming-chair',
     image: '/impact-gaming-chair.webp',
@@ -83,7 +83,7 @@ export const mockData = [
   {
     title: 'Mach Gaming Chair',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 130,
     slug: 'mach-gaming-chair',
     image: '/mach-gaming-chair.webp',
@@ -92,7 +92,7 @@ export const mockData = [
   {
     title: 'X-2 Wireless Mouse',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 25,
     slug: 'x-2-wireless-mouse',
     image: '/x-2-wireless-mouse.webp',
@@ -101,7 +101,7 @@ export const mockData = [
   {
     title: 'Blaze Wireless Mouse',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 25,
     slug: 'blaze-wireless-mouse',
     image: '/blaze-wireless-mouse.webp',
@@ -110,7 +110,7 @@ export const mockData = [
   {
     title: 'Spartan Mechanical Keyboard',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 45,
     slug: 'spartan-mechanical-keyboard',
     image: '/spartan-mechanical-keyboard.webp',
@@ -119,7 +119,7 @@ export const mockData = [
   {
     title: 'CO-21 Mechanical Keyboard',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 45,
     slug: 'co-21-mechanical-keyboard',
     image: '/co-21-mechanical-keyboard.webp',
@@ -128,7 +128,7 @@ export const mockData = [
   {
     title: 'Wave',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 30,
     slug: 'wave',
     image: '/wave.webp',
@@ -137,7 +137,7 @@ export const mockData = [
   {
     title: 'Stealth X',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 30,
     slug: 'stealth-x',
     image: '/stealth-x.webp',
@@ -146,7 +146,7 @@ export const mockData = [
   {
     title: 'Libra 2.0',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 45,
     slug: 'libra-2-0',
     image: '/libra-2-0.webp',
@@ -155,7 +155,7 @@ export const mockData = [
   {
     title: 'Flint',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 30,
     slug: 'flint',
     image: '/flint.webp',
@@ -164,7 +164,7 @@ export const mockData = [
   {
     title: 'Raptor',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 30,
     slug: 'raptor',
     image: '/raptor.webp',
@@ -173,7 +173,7 @@ export const mockData = [
   {
     title: 'Ghost',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 45,
     slug: 'ghost',
     image: '/ghost.webp',
@@ -182,7 +182,7 @@ export const mockData = [
   {
     title: 'Cyber Kid Infinite',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 40,
     slug: 'cyber-kid-infinite',
     image: '/cyber-kid-infinite.webp',
@@ -191,7 +191,7 @@ export const mockData = [
   {
     title: 'Chronosplit',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 40,
     slug: 'chronosplit',
     image: '/chronosplit.webp',
@@ -200,7 +200,7 @@ export const mockData = [
   {
     title: 'Ice Dome: Exile',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 40,
     slug: 'ice-dome-exile',
     image: '/ice-dome-exile.webp',
@@ -209,7 +209,7 @@ export const mockData = [
   {
     title: 'Ancient Souls',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 40,
     slug: 'ancient-souls',
     image: '/ancient-souls.webp',
@@ -218,7 +218,7 @@ export const mockData = [
   {
     title: 'Kira and the Fading Islands',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 40,
     slug: 'kira-and-the-fading-islands',
     image: '/kira-and-the-fading-islands.webp',
@@ -227,7 +227,7 @@ export const mockData = [
   {
     title: 'Dead at Last',
     description: `I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.`,
-    inStock: 100,
+    stock: 100,
     price: 40,
     slug: 'dead-at-last',
     image: '/dead-at-last.webp',
