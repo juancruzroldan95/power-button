@@ -1,7 +1,6 @@
 import React from 'react';
 import CategoriesMenu from '@/components/CategoriesMenu';
 import ProductList from '@/components/ProductList';
-import type { CategoryName } from '@/components/ProductList';
 
 type ProductProps = {
   params: {

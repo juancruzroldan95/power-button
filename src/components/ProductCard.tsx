@@ -1,31 +1,16 @@
 import React from 'react';
-import type { CategoryName } from './ProductList';
 import Link from 'next/link';
 import Image from 'next/image';
 
 type ProductCardProps = {
-  item: {
-    title: string;
-    description: string;
-    inStock: number;
-    price: number;
-    slug: string;
-    image: string;
-    category: CategoryName;
-  };
+  item: Product;
 };
 
 export default function ProductCard({ item }: ProductCardProps) {
   return (
     <article className="basis-72 shadow-lg rounded">
       <Link href={`/products/detail/${item.slug}`} className="flex flex-col">
-        <Image
-          alt={item.title}
-          src={item.image}
-          width={288}
-          height={288}
-          style={{ objectFit: 'contain' }}
-        />
+        <Image alt={item.title} src={item.image} width={288} height={288} style={{ objectFit: 'contain' }} />
 
         <div className="px-4 my-4">
           <h4 className="flex justify-center text-md font-bold">{item.title}</h4>
