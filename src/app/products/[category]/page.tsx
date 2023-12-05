@@ -8,6 +8,11 @@ type ProductProps = {
   };
 };
 
+export function generateStaticParams() {
+  return [{ category: 'all' }, { category: 'consoles' }, { category: 'accessories' }, { category: 'games' }];
+}
+
+export const revalidate = 3600;
 export default function Products({ params }: ProductProps) {
   const { category } = params;
 
