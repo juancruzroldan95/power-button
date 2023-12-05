@@ -1,20 +1,20 @@
+'use client';
 import React from 'react';
-import BackButton from '@/components/BackButton';
+import { useCartContext } from '@/components/context/CartContext';
+import CardItem from '@/components/CartItem';
 
-export default function Dashboard() {
+export default function CartPage() {
+  const { cart } = useCartContext();
+
   return (
-    <main className="max-w-screen-xl mx-auto">
-      <section
-        id="dashboard"
-        className="flex flex-col justify-center p-6 items-center gap-8 mb-12 relative"
-      >
-        <h2 className="text-9xl font-bold text-center">carrito</h2>
-        <h2 className="text-9xl font-bold text-center">
-          coming soon<span className="text-violet-400">.</span>
-        </h2>
-        <p className="max-w-lg text-2xl mt-4 text-center text-slate-400">Put some text here.</p>
-        <BackButton />
-      </section>
+    <main className="container m-auto">
+      <h2 className="text-2xl my-10 border-b pb-4">Tu carrito</h2>
+
+      <ul>
+        {cart.map((product) => (
+          <CartItem product={product} key={product.slug} />
+        ))}
+      </ul>
     </main>
   );
 }
