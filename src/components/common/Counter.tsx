@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useState } from 'react';
-import Button from './Button';
+import Button from '../Button';
 
 export default function Counter() {
   const [counter, setCounter] = useState<number>(1);
