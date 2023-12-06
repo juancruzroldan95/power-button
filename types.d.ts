@@ -9,3 +9,9 @@ type Product = {
 }
 
 type CategoryName = 'consoles' | 'accessories' | 'games' | 'all'
+
+type Contact = {
+  name?: string,
+  email?: string,
+  message?: string
+}
