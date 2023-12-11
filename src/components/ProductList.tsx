@@ -1,20 +1,20 @@
 import React from 'react';
-import { mockData } from '@/data/products';
 import ProductCard from './ProductCard';
-
-export type CategoryName = 'consoles' | 'accessories' | 'games' | 'all';
+import getAllProducts from '@/lib/getAllProducts';
 
 type ProductProps = {
   category: CategoryName;
 };
 
-export default function ProductList({ category }: ProductProps) {
-  const items =
-    category === 'all' ? mockData : mockData.filter((item) => item.category === category);
+export default async function ProductList({ category }: ProductProps) {
+  const productsData: Promise<Product[]> = getAllProducts();
+  const allProducts = await productsData;
+
+  const products = category === 'all' ? allProducts : allProducts.filter((product) => product.category === category);
   return (
     <section className="container m-auto flex justify-center items-center gap-12 flex-wrap">
-      {items.map((item) => (
-        <ProductCard key={item.slug} item={item} />
+      {products.map((product) => (
+        <ProductCard key={product.slug} product={product} />
       ))}
     </section>
   );
