@@ -3,9 +3,13 @@ import React from 'react';
 import { useState } from 'react';
 import Button from '../Button';
 
-export default function Counter() {
-  const [counter, setCounter] = useState<number>(1);
+type CounterProps = {
+  max: number;
+  counter: number;
+  setCounter: (number: number) => void;
+};
 
+export default function Counter({ max, counter, setCounter }: CounterProps) {
   const increase = () => {
     setCounter(counter + 1);
   };
@@ -15,9 +19,9 @@ export default function Counter() {
   };
 
   return (
-    <div className="flex justify-center items-center ggap-3">
+    <div className="flex gap-3">
       <Button onClick={decrease}> - </Button>
-      <p>{counter}</p>
+      <p className="flex justify-center items-center">{counter}</p>
       <Button onClick={increase}> + </Button>
     </div>
   );

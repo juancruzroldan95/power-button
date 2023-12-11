@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import CartQty from '../CartQty';
 
 export default function Header() {
   return (
@@ -23,8 +24,11 @@ export default function Header() {
           <Link href="/contact-us" className="hover:text-violet-400 transition-colors">
             Contacto
           </Link>
+          <Link href="/login" className="hover:text-violet-400 transition-colors">
+            Log In
+          </Link>
           <Link href="/cart" className="hover:text-violet-400 transition-colors">
-            Carrito
+            Carrito (<CartQty />)
           </Link>
         </nav>
       </section>

@@ -1,13 +1,10 @@
 import React from 'react';
 import BackButton from '@/components/BackButton';
 
-export default function Dashboard() {
+export default function OnSale() {
   return (
     <main className="max-w-screen-xl mx-auto">
-      <section
-        id="dashboard"
-        className="flex flex-col justify-center p-6 items-center gap-8 mb-12 relative"
-      >
+      <section id="dashboard" className="flex flex-col justify-center p-6 items-center gap-8 mb-12 relative">
         <h2 className="text-9xl font-bold text-center">ofertas</h2>
         <h2 className="text-9xl font-bold text-center">
           coming soon<span className="text-violet-400">.</span>

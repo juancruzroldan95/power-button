@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Button from './Button';
 
 type AddToCartButtonProps = {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -7,11 +8,8 @@ type AddToCartButtonProps = {
 
 export default function AddToCartButton({ onClick }: AddToCartButtonProps) {
   return (
-    <button
-      className="bg-violet-950 hover:bg-violet-400 active:bg-violet-500 text-white font-bold p-2 px-16 my-4 w-full rounded-full border border-solid border-slate-900"
-      onClick={onClick}
-    >
+    <Button className="w-full" onClick={onClick}>
       Agregar al carrito
-    </button>
+    </Button>
   );
 }

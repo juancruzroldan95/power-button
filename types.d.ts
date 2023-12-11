@@ -10,6 +10,19 @@ type Product = {
 
 type CategoryName = 'consoles' | 'accessories' | 'games' | 'all'
 
+type Item = Product & {
+  quantity: number;
+};
+
+type CartContextType = {
+  cart: Item[];
+  addToCart: (item: Item) => void;
+  isInCart: (slug: string) => boolean;
+  totalQty: () => number;
+  totalAmount: () => number;
+  emptyCart: () => void;
+}
+
 type Contact = {
   name?: string,
   email?: string,

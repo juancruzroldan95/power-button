@@ -1,30 +1,35 @@
 'use client';
 import { createContext, useContext, useState } from 'react';
 
-const CartContext = createContext(null);
+export const CartContext = createContext<CartContextType | null>(null);
 
 export function useCartContext() {
-  return useContext(CartContext);
+  return useContext(CartContext) as CartContextType;
 }
 
-export function CartProvider({ children }: any) {
-  const [cart, setCart] = useState<Product[]>([]);
+export default function CartProvider({ children }: any) {
+  const [cart, setCart] = useState<Item[]>([]);
+  console.log(cart);
 
-  function addToCart(product: Product) {
-    setCart([...cart, product]);
+  function addToCart(item: Item) {
+    setCart([...cart, item]);
   }
 
   function isInCart(slug: string) {
-    return cart.some((product) => product.slug === slug);
+    return cart.some((item) => item.slug === slug);
   }
 
   function totalQty() {
-    return cart.reduce((acc, product) => acc + product.quantity, 0);
+    return cart.reduce((acc, item) => acc + item.quantity, 0);
+  }
+
+  function totalAmount() {
+    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   }
 
   function emptyCart() {
     setCart([]);
   }
 
-  return <CartContext.Provider value={{ cart, addToCart, isInCart, totalQty, emptyCart }}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={{ cart, addToCart, isInCart, totalQty, totalAmount, emptyCart }}>{children}</CartContext.Provider>;
 }
