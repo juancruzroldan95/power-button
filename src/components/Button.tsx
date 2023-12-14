@@ -1,10 +1,9 @@
 import React from 'react';
 
-type ButtonProps = {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
   className?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
+}
 
 export default function Button({ children, className = '', ...args }: ButtonProps) {
   return (
