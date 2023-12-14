@@ -6,7 +6,7 @@ import CartQty from '../CartQty';
 export default function Header() {
   return (
     <header className="w-full bg-violet-950">
-      <section className="container m-auto py-6 flex justify-between items-center">
+      <section className="xl:max-w-7xl m-auto p-6 flex justify-between items-center">
         <Link href="/" className="flex justify-between items-center gap-4">
           <Image src="/power-button-logo.png" alt="Power-Button Logo" height={50} width={50} />
           <h1 className="uppercase font-bold text-lg">Power-Button</h1>
