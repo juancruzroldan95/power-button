@@ -1,5 +1,14 @@
-export default async function createNewProduct(body: Product) {
-  const res = await fetch(`${process.env.BASE_URL}/api/products/`, {
+import { storage } from '@/firebase/config';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+
+export default async function createNewProduct(values: Product, file: File) {
+  const storageRef = ref(storage, file.name);
+  const fileSnap = await uploadBytes(storageRef, file)
+  const fileURL = await getDownloadURL(fileSnap.ref)
+  const body = { ...values, image: fileURL };
+  console.log('BASE_URL:', process.env.BASE_URL);
+
+  const res = await fetch(`http://localhost:3000/api/products/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

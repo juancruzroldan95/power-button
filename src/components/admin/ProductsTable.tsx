@@ -7,7 +7,7 @@ export default async function ProductsTable() {
   const allProducts: Product[] = await getAllProducts();
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto pb-8">
       <table className="w-full table-auto text-left border-collapse border border-slate-600">
         <thead className="bold text-gray-300">
           <tr className="bg-slate-700">

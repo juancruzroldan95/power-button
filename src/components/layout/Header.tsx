@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import CartQty from '../CartQty';
+import { MdOutlineShoppingCart } from 'react-icons/md';
+import { FaRegUserCircle } from 'react-icons/fa';
 
 export default function Header() {
   return (
@@ -14,22 +16,31 @@ export default function Header() {
         <button id="hamburger-button" className="text-3xl md:hidden cursor-pointer">
           &#9776;
         </button>
-        <nav className="hidden md:block space-x-8 text-xl" aria-label="main">
-          <Link href="/products/all" className="hover:text-violet-400 transition-colors">
-            Catálogo
-          </Link>
-          <Link href="/on-sale" className="hover:text-violet-400 transition-colors">
-            Ofertas
-          </Link>
-          <Link href="/contact-us" className="hover:text-violet-400 transition-colors">
-            Contacto
-          </Link>
-          <Link href="/login" className="hover:text-violet-400 transition-colors">
-            Log In
-          </Link>
-          <Link href="/cart" className="hover:text-violet-400 transition-colors">
-            Carrito (<CartQty />)
-          </Link>
+        <nav className="hidden md:block text-xl" aria-label="main">
+          <div className="space-x-8 flex">
+            <Link href="/products/all" className="hover:text-violet-400 transition-colors">
+              Catálogo
+            </Link>
+            <Link href="/on-sale" className="hover:text-violet-400 transition-colors">
+              Ofertas
+            </Link>
+            <Link href="/contact-us" className="hover:text-violet-400 transition-colors">
+              Contacto
+            </Link>
+            <Link href="/login" className="hover:text-violet-400 transition-colors">
+              <div className="flex items-center">
+                <div className="pr-2">
+                  <FaRegUserCircle />
+                </div>
+                Log In
+              </div>
+            </Link>
+            <Link href="/cart" className="hover:text-violet-400 transition-colors">
+              <div className="flex items-center">
+                <MdOutlineShoppingCart /> (<CartQty />)
+              </div>
+            </Link>
+          </div>
         </nav>
       </section>
       {/*

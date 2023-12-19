@@ -15,10 +15,19 @@ export default function CreateForm() {
     slug: '',
   });
 
+  const [file, setFile] = useState<File>({} as File);
+
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const title = e.target.value;
     const slug = generateSlug(title);
     setValues({ ...values, title, slug });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const selectedFile = e.target.files[0];
+      setFile(selectedFile);
+    }
   };
 
   const generateSlug = (title: string) => {
@@ -41,8 +50,7 @@ export default function CreateForm() {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(values);
-    await createNewProduct(values);
+    await createNewProduct(values, file);
   };
 
   return (
@@ -85,9 +93,9 @@ export default function CreateForm() {
             <div className="mt-4 flex text-sm leading-6 text-gray-400">
               <label htmlFor="file-upload" className="cursor-pointer rounded-md font-semibold text-white hover:text-violet-800">
                 <span>Subí un archivo</span>
-                <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={handleFileChange} required />
               </label>
-              <p className="pl-1">o arrastralo acá</p>
+              <p className="pl-1">{file && file.name}</p>
             </div>
             <p className="text-xs leading-5 text-gray-400">PNG, JPG, GIF hasta 10MB</p>
           </div>

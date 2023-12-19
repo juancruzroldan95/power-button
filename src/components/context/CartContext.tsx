@@ -9,7 +9,6 @@ export function useCartContext() {
 
 export default function CartProvider({ children }: any) {
   const [cart, setCart] = useState<Item[]>([]);
-  console.log(cart);
 
   function addToCart(item: Item) {
     setCart([...cart, item]);
