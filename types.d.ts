@@ -14,6 +14,12 @@ type Item = Product & {
   quantity: number;
 };
 
+type Contact = {
+  name?: string,
+  email?: string,
+  message?: string
+}
+
 type CartContextType = {
   cart: Item[];
   addToCart: (item: Item) => void;
@@ -23,8 +29,20 @@ type CartContextType = {
   emptyCart: () => void;
 }
 
-type Contact = {
-  name?: string,
-  email?: string,
-  message?: string
+type User = {
+  "uid"?: string,
+  "email"?: string,
+  "logged": boolean
+}
+
+type AuthValues = {
+  email: string,
+  password: string
+}
+
+type AuthContextType = {
+  user: User;
+  registerUser: (values: AuthValues) => void;
+  loginUser: (values: AuthValues) => void;
+  logOut: () => void
 }
