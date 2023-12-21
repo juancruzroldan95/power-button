@@ -44,5 +44,6 @@ type AuthContextType = {
   user: User;
   registerUser: (values: AuthValues) => void;
   loginUser: (values: AuthValues) => void;
-  logOut: () => void
+  logOut: () => void;
+  googleLogIn: () => void
 }
