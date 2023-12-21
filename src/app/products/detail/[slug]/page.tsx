@@ -8,14 +8,8 @@ import QuantitySelector from '@/components/common/QuantitySelector';
 // import QuantitySelector from "./QuantitySelector"
 // import GoBack from "./GoBack"
 
-type ProductDetailProps = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function generateMetadata({ params: { slug } }: ProductDetailProps): Promise<Metadata> {
-  const productData: Promise<Product> = getProduct(slug);
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const productData: Promise<Product> = getProduct(params.slug);
   const product: Product = await productData;
 
   return {
@@ -24,8 +18,8 @@ export async function generateMetadata({ params: { slug } }: ProductDetailProps)
   };
 }
 
-export default async function ProductDetail({ params: { slug } }: ProductDetailProps) {
-  const productData: Promise<Product> = getProduct(slug);
+export default async function ProductDetail({ params }: { params: { slug: string } }) {
+  const productData: Promise<Product> = getProduct(params.slug);
   const product = await productData;
 
   return (
