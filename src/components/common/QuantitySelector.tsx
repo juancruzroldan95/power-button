@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Counter from '@/components/common/Counter';
 import AddToCartButton from '../AddToCartButton';
 import { useCartContext } from '../context/CartContext';
+import { toast } from 'react-toastify';
 
 type QuantitySelectorProps = {
   product: Product;
@@ -17,6 +18,16 @@ export default function QuantitySelector({ product }: QuantitySelectorProps) {
     addToCart({
       ...product,
       quantity,
+    });
+    toast.success('Producto agregado al carrito!', {
+      position: 'top-right',
+      autoClose: 3000, // Duration in milliseconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
     });
   };
 
