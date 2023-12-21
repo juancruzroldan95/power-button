@@ -14,24 +14,16 @@ export default function CreateForm() {
     category: 'all',
     slug: '',
   });
-
   const [file, setFile] = useState<File>({} as File);
+
+  const generateSlug = (title: string) => {
+    return title.toLowerCase().replace(/\s+/g, '-');
+  };
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const title = e.target.value;
     const slug = generateSlug(title);
     setValues({ ...values, title, slug });
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      const selectedFile = e.target.files[0];
-      setFile(selectedFile);
-    }
-  };
-
-  const generateSlug = (title: string) => {
-    return title.toLowerCase().replace(/\s+/g, '-');
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,6 +38,20 @@ export default function CreateForm() {
       ...values,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const selectedFile = e.target.files[0];
+      setFile(selectedFile);
+    }
   };
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -127,14 +133,17 @@ export default function CreateForm() {
         </div>
 
         <label className="font-bold">Categoría</label>
-        <input
-          type="text"
+        <select
           value={values.category}
           required
           className="p-2 rounded w-full border border-gray-600 bg-gray-800 block mt-2 mb-8"
           name="category"
-          onChange={handleInputChange}
-        />
+          onChange={handleSelectChange}
+        >
+          <option value="games">Juegos</option>
+          <option value="consoles">Consolas</option>
+          <option value="accessories">Accesorios</option>
+        </select>
         <div className="flex justify-center">
           <Button type="submit" className="p-4 text-lg">
             Crear producto

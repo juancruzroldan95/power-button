@@ -6,9 +6,8 @@ export default async function createNewProduct(values: Product, file: File) {
   const fileSnap = await uploadBytes(storageRef, file)
   const fileURL = await getDownloadURL(fileSnap.ref)
   const body = { ...values, image: fileURL };
-  console.log('BASE_URL:', process.env.BASE_URL);
 
-  const res = await fetch(`http://localhost:3000/api/products/`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
