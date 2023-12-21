@@ -1,9 +1,9 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import LogInLink from '../LogInLink';
 import CartQty from '../CartQty';
 import { MdOutlineShoppingCart } from 'react-icons/md';
-import { FaRegUserCircle } from 'react-icons/fa';
 
 export default function Header() {
   return (
@@ -27,14 +27,7 @@ export default function Header() {
             <Link href="/contact-us" className="hover:text-violet-400 transition-colors">
               Contacto
             </Link>
-            <Link href="/login" className="hover:text-violet-400 transition-colors">
-              <div className="flex items-center">
-                <div className="pr-2">
-                  <FaRegUserCircle />
-                </div>
-                Log In
-              </div>
-            </Link>
+            <LogInLink />
             <Link href="/cart" className="hover:text-violet-400 transition-colors">
               <div className="flex items-center">
                 <MdOutlineShoppingCart /> (<CartQty />)

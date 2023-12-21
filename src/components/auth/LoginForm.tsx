@@ -3,9 +3,14 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Button from '../Button';
 import { useAuthContext } from '../context/AuthContext';
+import { FcGoogle } from 'react-icons/fc';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
-  const { loginUser } = useAuthContext() as AuthContextType;
+  const router = useRouter();
+
+  const { loginUser, googleLogIn } = useAuthContext() as AuthContextType;
   const [values, setValues] = useState<AuthValues>({
     email: '',
     password: '',
@@ -20,14 +25,75 @@ export default function LoginForm() {
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const res = await loginUser(values);
-    console.log(res);
+    try {
+      await loginUser(values);
+      toast.success('Sesión iniciada', {
+        position: 'top-right',
+        autoClose: 3000, // Duration in milliseconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+      router.push('/');
+    } catch (error) {
+      console.log('Log In error:', error);
+      toast.error('Credenciales inválidas', {
+        position: 'top-right',
+        autoClose: 3000, // Duration in milliseconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+    }
   }
 
+  async function handleGoogleLogIn() {
+    try {
+      await googleLogIn();
+      toast.success('Sesión iniciada', {
+        position: 'top-right',
+        autoClose: 3000, // Duration in milliseconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+      router.push('/');
+    } catch (error) {
+      console.log('Log In error:', error);
+      toast.error('Credenciales inválidas', {
+        position: 'top-right',
+        autoClose: 3000, // Duration in milliseconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+    }
+  }
   return (
     <div className="fixed w-screen h-screen inset-0 z-10 flex justify-center items-center bg-violet-400 bg-opacity-25">
       <form onSubmit={handleFormSubmit} className="bg-black py-4 px-6 rounded-xl max-w-md w-full">
         <h2 className="text-2xl pb-4 text-center">Log In</h2>
+        <div className="flex justify-center">
+          <button
+            onClick={handleGoogleLogIn}
+            className="bg-white text-black mb-4 py-2 px-4 rounded-full shadow-md flex items-center cursor-pointer hover:bg-gray-100"
+          >
+            <FcGoogle /> Log In with Google
+          </button>
+        </div>
+        <div className="flex justify-center">Ó</div>
         <label className="font-bold">Email</label>
         <input
           type="email"
