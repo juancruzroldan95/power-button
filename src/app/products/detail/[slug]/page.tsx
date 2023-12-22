@@ -19,12 +19,15 @@ export default function ProductDetail({ params }: ProductDetailProps) {
     <div className="max-w-4xl m-auto">
       <BackButton />
       <section className="flex gap-6 py-16">
-        <div className="relative basis-1/2">
-          <Image alt={item.title} src={item.image} width={860} height={860} />
-        </div>
+        <div className="relative basis-1/2">{item ? <Image alt={item.title} src={item.image} width={860} height={860} /> : null}</div>
         <div className="basis-1/2">
-          <h2 className="text-4xl font-bold border-b border-gray-200 mb-4">{item.title}</h2>
-          <p className="text-xl">u$s {item.price}</p>
+          {item ? (
+            <div>
+              <h2 className="text-4xl font-bold border-b border-gray-200 mb-4">{item.title}</h2>
+              <p className="text-xl">u$s {item.price}</p>
+            </div>
+          ) : null}
+
           <AddToCartButton />
           <p className="text-white">{item?.description}</p>
         </div>
