@@ -6,18 +6,13 @@ import SubscribeButton from '@/components/SubscribeButton';
 export default function HomePage() {
   return (
     <main className="max-w-screen-xl mx-auto">
-      <section
-        id="hero"
-        className="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 relative"
-      >
+      <section id="hero" className="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 relative">
         <article className="sm:w-1/2">
           <h2 className="text-4xl font-bold text-center sm:text-left">
-            Convertite en un verdadero <span className="text-violet-400">Tryhard</span> con nuestras
-            ofertas.
+            Convertite en un verdadero <span className="text-violet-400">Tryhard</span> con nuestras ofertas
           </h2>
           <p className="max-w-lg text-2xl mt-4 text-center sm:text-left text-slate-400">
-            ¡Potenciá tu setup gaming! Equipate con lo mejor para alcanzar la victoria. ¡No hay
-            tiempo que perder, la competencia te espera!
+            ¡Potenciá tu setup gaming! Equipate con lo mejor para alcanzar la victoria. ¡No hay tiempo que perder, la competencia te espera!
           </p>
         </article>
         <div className="sm:w-1/2">
@@ -28,9 +23,7 @@ export default function HomePage() {
       <hr className="mx-auto bg-white w-1/2"></hr>
 
       <section id="categories" className="p-6 my-12">
-        <h2 className="text-4xl font-bold text-center sm:text-left mb-6 text-white">
-          Comprá por categoría
-        </h2>
+        <h2 className="text-4xl font-bold text-center sm:text-left mb-6 text-white">Comprá por categoría</h2>
         <ul className="list-none mx-auto my-12 flex flex-col sm:flex-row items-center gap-8">
           <li className="w-2/3 sm:w-5/6 flex flex-col items-center">
             <Link href="/products/games">
@@ -63,9 +56,7 @@ export default function HomePage() {
 
       <section id="newsletter" className="p-6 my-12 text-center flex flex-col items-center">
         <h2 className="text-4xl font-bold mb-6 text-white">Newsletter</h2>
-        <p className="max-w-lg text-xl mt-4 text-center">
-          Registrate para recibir novedades de nuevos productos y ofertas especiales
-        </p>
+        <p className="max-w-lg text-xl mt-4 text-center">Registrate para recibir novedades de nuevos productos y ofertas especiales</p>
         <form action="" className="text-xl gap-4">
           <input
             type="text"
