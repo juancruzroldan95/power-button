@@ -1,15 +1,18 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import Button from './Button';
 
 export default function BackButton() {
   const router = useRouter();
+
+  const handleBackButton = () => {
+    router.back();
+  };
+
   return (
-    <button
-      className="bg-violet-950 hover:bg-violet-400 active:bg-violet-500 text-white p-4 w-3xl rounded-xl border border-solid border-slate-900"
-      onClick={() => router.back()}
-    >
+    <Button className="w-full mt-8" onClick={handleBackButton}>
       Volver
-    </button>
+    </Button>
   );
 }
