@@ -9,11 +9,11 @@ type ProductsCategoryProps = {
   };
 };
 
-export function generateMetaData({ params }: ProductsCategoryProps) {
-  return {
-    title: `${params.category} | Power Button`,
-  };
-}
+// export function generateMetaData({ params }: ProductsCategoryProps) {
+//   return {
+//     title: `${params.category} | Power Button`,
+//   };
+// }
 
 export function generateStaticParams() {
   return [{ category: 'all' }, { category: 'consoles' }, { category: 'accessories' }, { category: 'games' }];
