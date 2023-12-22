@@ -10,7 +10,7 @@ const AuthContext = createContext<AuthContextType | null>(null);
 export const useAuthContext = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }: any) => {
-  const [user, setUser] = useState<UserState>({
+  const [user, setUser] = useState<UserAuth>({
     uid: '',
     email: '',
     role: '',
