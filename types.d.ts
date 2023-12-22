@@ -1,11 +1,11 @@
 type Product = {
-  "title": string,
-  "description": string,
-  "stock": number,
-  "price": number,
-  "slug": string,
-  "image": string,
-  "category": CategoryName,
+  title: string,
+  description: string,
+  stock: number,
+  price: number,
+  slug: string,
+  image: string,
+  category: CategoryName,
 }
 
 type CategoryName = 'consoles' | 'accessories' | 'games' | 'all'
@@ -23,6 +23,8 @@ type Contact = {
 type CartContextType = {
   cart: Item[];
   addToCart: (item: Item) => void;
+  removeFromCart: (slug: string) => void;
+  updateItemQuantity: (slug: string, newQuantity: number) => void;
   isInCart: (slug: string) => boolean;
   totalQty: () => number;
   totalAmount: () => number;
@@ -30,9 +32,21 @@ type CartContextType = {
 }
 
 type User = {
-  "uid"?: string,
-  "email"?: string,
-  "logged": boolean
+  uid: string,
+  email: string,
+  role: string,
+}
+
+type UserState = User & {
+  logged: boolean,
+}
+
+type Order = {
+  orderId?: string,
+  email?: string,
+  items?: Item[],
+  totalAmount?: number,
+  date?: string
 }
 
 type AuthValues = {

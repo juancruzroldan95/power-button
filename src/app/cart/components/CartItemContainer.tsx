@@ -5,14 +5,24 @@ import CartItem from './CartItem';
 
 export default function CartItemContainer() {
   const { cart } = useCartContext();
+
   return (
-    <>
-      {' '}
-      <ul>
-        {cart.map((item) => (
-          <CartItem item={item} key={item.slug} />
-        ))}
-      </ul>
-    </>
+    <div>
+      {cart.length !== 0 ? (
+        <div>
+          <ul>
+            {cart.map((item) => (
+              <CartItem item={item} key={item.slug} />
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <div>
+          <h2 className="text-xl font-bold text-center my-40">
+            Agrega <span className="text-violet-400">productos</span> para verlos acá!
+          </h2>
+        </div>
+      )}
+    </div>
   );
 }

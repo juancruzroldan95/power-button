@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Button from '../Button';
 import PhotoIcon from '../PhotoIcon';
-import createNewProduct from '@/lib/createNewProduct';
+import createNewProduct from '@/lib/products/createNewProduct';
 
 export default function CreateForm() {
   const [values, setValues] = useState<Product>({

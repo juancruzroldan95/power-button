@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '../Button';
 import PhotoIcon from '../PhotoIcon';
-import updateProduct from '@/lib/updateProduct';
+import updateProduct from '@/lib/products/updateProduct';
 
 export default function EditForm({ product }: { product: Product }) {
   const router = useRouter();

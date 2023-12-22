@@ -1,4 +1,4 @@
-import getAllProducts from '@/lib/getAllProducts';
+import getAllProducts from '@/lib/products/getAllProducts';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';

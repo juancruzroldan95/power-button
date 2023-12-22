@@ -8,7 +8,7 @@ export default function AdminPage() {
     <div className="container m-auto mt-6">
       <div className="p-4 flex justify-between items-center">
         <h2 className="text-2xl">Panel Administración</h2>
-        <Link href="/admin/create">
+        <Link href="/admin/create/new">
           <Button className="p-3 text-lg">Crear nuevo producto</Button>
         </Link>
       </div>

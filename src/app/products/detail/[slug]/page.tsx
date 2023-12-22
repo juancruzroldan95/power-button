@@ -1,12 +1,8 @@
 import React from 'react';
-import getProduct from '@/lib/getProduct';
+import getProduct from '@/lib/products/getProduct';
 import Image from 'next/image';
-import AddToCartButton from '@/components/AddToCartButton';
-import BackButton from '@/components/BackButton';
 import type { Metadata } from 'next';
 import QuantitySelector from '@/components/common/QuantitySelector';
-// import QuantitySelector from "./QuantitySelector"
-// import GoBack from "./GoBack"
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const productData: Promise<Product> = getProduct(params.slug);
@@ -31,7 +27,6 @@ export default async function ProductDetail({ params }: { params: { slug: string
         <div className="basis-1/2">
           <h2 className="text-4xl font-bold border-b border-gray-200 mb-4">{product.title}</h2>
           <p className="text-xl">u$s {product.price}</p>
-          <p className="text-xl font-bold mt-6">Cantidad: </p>
           <QuantitySelector product={product} />
           <p className="text-white">{product?.description}</p>
         </div>

@@ -37,7 +37,7 @@ export default function LoginForm() {
         progress: undefined,
         theme: 'dark',
       });
-      router.push('/');
+      router.back();
     } catch (error) {
       console.log('Log In error:', error);
       toast.error('Credenciales inválidas', {
