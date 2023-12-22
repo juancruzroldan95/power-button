@@ -1,5 +1,5 @@
-export default async function createNewProduct(body: Product) {
-  const res = await fetch(`${process.env.BASE_URL}/api/products/`, {
+export default async function createNewUser(body: User) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

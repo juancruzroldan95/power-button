@@ -9,10 +9,17 @@ export function useCartContext() {
 
 export default function CartProvider({ children }: any) {
   const [cart, setCart] = useState<Item[]>([]);
-  console.log(cart);
 
   function addToCart(item: Item) {
     setCart([...cart, item]);
+  }
+
+  function removeFromCart(slug: string) {
+    setCart((prevCart) => prevCart.filter((item) => item.slug !== slug));
+  }
+
+  function updateItemQuantity(slug: string, newQuantity: number) {
+    setCart((prevCart) => prevCart.map((item) => (item.slug === slug ? { ...item, quantity: newQuantity } : item)));
   }
 
   function isInCart(slug: string) {
@@ -31,5 +38,9 @@ export default function CartProvider({ children }: any) {
     setCart([]);
   }
 
-  return <CartContext.Provider value={{ cart, addToCart, isInCart, totalQty, totalAmount, emptyCart }}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateItemQuantity, isInCart, totalQty, totalAmount, emptyCart }}>
+      {children}
+    </CartContext.Provider>
+  );
 }

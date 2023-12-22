@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import getAllProducts from '@/lib/getAllProducts';
+import getAllProducts from '@/lib/products/getAllProducts';
 
 type ProductProps = {
   category: CategoryName;

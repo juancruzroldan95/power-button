@@ -4,6 +4,9 @@ import './globals.css';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import CartProvider from '@/components/context/CartContext';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import { AuthProvider } from '@/components/context/AuthContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,11 +24,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CartProvider>
-          <Header />
-          {children}
-          <Footer />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Header />
+            {children}
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
+        <ToastContainer />
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ type ProductsCategoryProps = {
   };
 };
 
-export async function generateMetaData({ params }: ProductsCategoryProps) {
+export function generateMetaData({ params }: ProductsCategoryProps) {
   return {
     title: `${params.category} | Power Button`,
   };
