@@ -9,9 +9,18 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const body: Order = await request.json();
-  const { orderId } = body;
-  await setDoc(doc(db, "orders", orderId), body);
-  const docSnap = await getDoc(doc(db, "orders", orderId));
-  return NextResponse.json(docSnap.data());
+  try {
+    const body: Order = await request.json();
+    const orderId = body?.orderId;
+
+    if (orderId) {
+      await setDoc(doc(db, "orders", orderId), body);
+      const docSnap = await getDoc(doc(db, "orders", orderId));
+
+      return NextResponse.json(docSnap.data());
+    }
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
