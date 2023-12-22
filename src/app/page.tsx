@@ -9,7 +9,7 @@ export default function HomePage() {
       <section id="hero" className="flex flex-col-reverse justify-center md:flex-row p-6 items-center gap-8 mb-12 relative">
         <article className="md:w-1/2">
           <h2 className="text-4xl font-bold text-center md:text-left">
-            Convertite en un verdadero <span className="text-violet-400">Tryhard</span> con nuestras ofertas.
+            Convertite en un verdadero <span className="text-violet-400">Tryhard</span> con nuestras ofertas
           </h2>
           <p className="text-2xl mt-4 text-center md:text-left text-slate-400">
             ¡Potenciá tu setup gaming! Equipate con lo mejor para alcanzar la victoria. ¡No hay tiempo que perder, la competencia te espera!
