@@ -9,7 +9,7 @@ export async function GET() { // Get all products
 }
 
 export async function POST(request: NextRequest) { // Create new product
-  const body: Product = await request.json();
+  const body = await request.json();
   const { slug } = body;
   await setDoc(doc(db, "products", slug), body)
   const docSnap = await getDoc(doc(db, "products", slug))

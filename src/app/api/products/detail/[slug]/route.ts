@@ -14,7 +14,7 @@ export async function GET(request: Request, { params }: { params: { slug: string
 
 export async function PUT(request: Request, { params }: { params: { slug: string } }) {
   const { slug } = params;
-  const body: Product = await request.json();
+  const body = await request.json();
   await updateDoc(doc(db, "products", slug), body);
   const udpatedDoc = await getDoc(doc(db, "products", slug));
   return NextResponse.json(udpatedDoc.data())

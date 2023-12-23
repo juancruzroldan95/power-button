@@ -9,7 +9,7 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const body: User = await request.json();
+  const body = await request.json();
   const { email } = body;
   await setDoc(doc(db, "users", email), body);
   const docSnap = await getDoc(doc(db, "users", email));
