@@ -37,7 +37,7 @@ type User = {
   role: string,
 }
 
-type UserState = User & {
+type UserAuth = User & {
   logged: boolean,
 }
 
@@ -55,7 +55,7 @@ type AuthValues = {
 }
 
 type AuthContextType = {
-  user: User;
+  user: UserAuth;
   registerUser: (values: AuthValues) => void;
   loginUser: (values: AuthValues) => void;
   logOut: () => void;
