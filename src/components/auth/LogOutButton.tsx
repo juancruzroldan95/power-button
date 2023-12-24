@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { useAuthContext } from './context/AuthContext';
-import Button from './Button';
+import { useAuthContext } from '../context/AuthContext';
+import Button from '../Button';
 import { useRouter } from 'next/navigation';
 
 export default function LogOutButton() {
@@ -19,7 +19,9 @@ export default function LogOutButton() {
 
   return (
     <div>
-      <Button onClick={handleLogOutButton}>Cerrar sesión</Button>
+      <Button className="p-3" onClick={handleLogOutButton}>
+        Cerrar sesión
+      </Button>
     </div>
   );
 }
