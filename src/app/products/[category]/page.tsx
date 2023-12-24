@@ -1,6 +1,6 @@
 import React from 'react';
-import CategoriesMenu from '@/components/CategoriesMenu';
-import ProductList from '@/components/ProductList';
+import CategoriesMenu from '../components/CategoriesMenu';
+import ProductList from '../components/ProductList';
 import { Suspense } from 'react';
 
 type ProductsCategoryProps = {

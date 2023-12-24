@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductsTable from '@/components/admin/ProductsTable';
+import ProductsTable from '@/app/admin/components/ProductsTable';
 import Button from '@/components/Button';
 import Link from 'next/link';
 
