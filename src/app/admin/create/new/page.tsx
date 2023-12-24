@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateForm from '@/components/admin/CreateForm';
+import CreateForm from '@/app/admin/components/CreateForm';
 
 export default function CreatePage() {
   return (

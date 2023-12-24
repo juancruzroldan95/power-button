@@ -1,5 +1,5 @@
 import React from 'react';
-import DeleteModal from '@/components/admin/DeleteModal';
+import DeleteModal from '@/app/admin/components/DeleteModal';
 import getProduct from '@/lib/products/getProduct';
 
 export default async function DeleteProductPage({ params }: { params: { slug: string } }) {

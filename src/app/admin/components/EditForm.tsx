@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Button from '../Button';
-import PhotoIcon from '../PhotoIcon';
+import Button from '../../../components/Button';
+import PhotoIcon from '../../../components/PhotoIcon';
 import updateProduct from '@/lib/products/updateProduct';
 
 export default function EditForm({ product }: { product: Product }) {

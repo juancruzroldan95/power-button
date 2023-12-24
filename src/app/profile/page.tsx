@@ -1,12 +1,21 @@
-import LogOutButton from '@/components/LogOutButton';
 import React from 'react';
+import LogOutButton from '@/components/auth/LogOutButton';
+import ProfileContainer from './components/ProfileContainer';
+import getAllOrders from '@/lib/orders/getAllOrders';
 
-export default function ProfilePage() {
+export default async function ProfilePage() {
+  const allOrders = (await getAllOrders()) as Order[];
+
   return (
     <main className="container m-auto">
-      <h2 className="text-7xl font-bold uppercase my-10 border-b pb-4">Mi perfil</h2>
+      <div className="border-b">
+        <div className="px-4 flex justify-between items-center">
+          <h2 className="text-7xl font-bold uppercase my-10">Mi perfil</h2>
+          <LogOutButton />
+        </div>
+      </div>
       <div className="flex gap-10">
-        <LogOutButton />
+        <ProfileContainer allOrders={allOrders} />
       </div>
     </main>
   );

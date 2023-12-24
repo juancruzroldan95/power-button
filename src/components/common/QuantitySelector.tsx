@@ -2,7 +2,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Counter from '@/components/common/Counter';
-import AddToCartButton from '../AddToCartButton';
+import AddToCartButton from '../../app/products/components/AddToCartButton';
 import { useCartContext } from '../context/CartContext';
 import { toast } from 'react-toastify';
 
