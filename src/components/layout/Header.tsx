@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import LogInLink from '../LogInLink';
+import LogInLink from '../auth/LogInLink';
 import CartQty from '../CartQty';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 
