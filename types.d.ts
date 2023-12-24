@@ -45,7 +45,7 @@ type Order = {
   orderId?: string,
   email?: string,
   items?: Item[],
-  totalAmount?: number,
+  totalAmount: number,
   date?: string
 }
 
