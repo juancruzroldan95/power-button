@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { useAuthContext } from '../context/AuthContext';
-import Button from '../Button';
+import { useAuthContext } from '../../../components/context/AuthContext';
+import Button from '../../../components/Button';
 
 export default function LogOutButton() {
   const { logOut } = useAuthContext() as AuthContextType;

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Button from '../Button';
+import Button from '../../../components/Button';
 import deleteProduct from '@/lib/products/deleteProduct';
 import { useRouter } from 'next/navigation';
 export default function DeleteModal({ product }: { product: Product }) {

@@ -5,6 +5,8 @@ import { useAuthContext } from '@/components/context/AuthContext';
 import Button from '@/components/Button';
 import { toast } from 'react-toastify';
 import createNewOrder from '@/lib/orders/createNewOrder';
+import updateProduct from '@/lib/products/updateProduct';
+import getProductDetail from '@/lib/products/getProduct';
 
 export default function OrderSummary() {
   const { cart, totalAmount } = useCartContext();
@@ -14,8 +16,10 @@ export default function OrderSummary() {
     if (user.email) {
       try {
         const transformCart = (cart: Item[]) => {
-          return cart.map(({ title, price, quantity }) => ({
+          return cart.map(({ title, slug, image, price, quantity }) => ({
             title,
+            slug,
+            image,
             price,
             quantity,
           }));
@@ -28,11 +32,15 @@ export default function OrderSummary() {
           totalAmount: totalAmount(),
           date: new Date().toISOString(),
         };
-        const res = await createNewOrder(values);
-        console.log('Order creada: ', res);
-        toast.success('Orden generada! El admin se contactará con vos para coordinar el pago y la entrega!', {
+        await createNewOrder(values);
+        values?.items?.forEach(async (item) => {
+          const productBought: Product = await getProductDetail(item.slug);
+          const updatedStock = productBought.stock - item.quantity;
+          await updateProduct(item.slug, { stock: updatedStock } as Product);
+        });
+        toast.success('Orden generada! Nos contactaremos con vos por email para coordinar el pago y la entrega!', {
           position: 'top-right',
-          autoClose: 30000,
+          autoClose: 10000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

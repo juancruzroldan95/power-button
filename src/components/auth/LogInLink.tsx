@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaRegUserCircle } from 'react-icons/fa';
-import { useAuthContext } from './context/AuthContext';
+import { useAuthContext } from '../context/AuthContext';
 
 export default function LogInLink() {
   const { user } = useAuthContext() as AuthContextType;

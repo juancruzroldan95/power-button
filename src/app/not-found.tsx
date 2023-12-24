@@ -9,7 +9,7 @@ export default function NotFound() {
         <article className="sm:w-1/2">
           <h2 className="text-4xl font-bold text-center sm:text-left">Página no encontrada.</h2>
           <p className="max-w-lg text-2xl mt-4 text-center sm:text-left text-slate-400">
-            Perdón, no pudimos encontrar la página que estás buscando. Si pensá que es un error, por favor contactanos.
+            Perdón, no pudimos encontrar la página que estás buscando. Si pensás que es un error, por favor contactanos.
           </p>
           <BackButton />
         </article>

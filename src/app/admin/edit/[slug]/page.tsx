@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import EditForm from '@/components/admin/EditForm';
+import EditForm from '@/app/admin/components/EditForm';
 import getProduct from '@/lib/products/getProduct';
 
 export default async function EditProductPage({ params }: { params: { slug: string } }) {
