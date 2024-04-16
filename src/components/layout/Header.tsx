@@ -24,10 +24,17 @@ export default function Header() {
       <section className="xl:max-w-7xl m-auto p-6 flex justify-between items-center">
         <Link href="/" className="flex justify-between items-center gap-4">
           <Image src="/power-button-logo.png" alt="Power-Button Logo" height={50} width={50} />
-          <h1 className="uppercase font-bold text-lg">Power-Button</h1>
+          <h1 className="hidden md:block uppercase font-bold text-lg">Power-Button</h1>
         </Link>
-        <HamburgerBtn onClick={toggleMobileMenu} toggleBtn={toggleBtn} />
-        <nav className="hidden md:block text-xl" aria-label="main">
+        <div className='flex'>
+          <Link href="/cart" className="hover:text-violet-400 transition-colors md:hidden">
+            <div className="flex items-center text-3xl mx-4">
+              <MdOutlineShoppingCart /> (<CartQty />)
+            </div>
+          </Link>
+          <HamburgerBtn onClick={toggleMobileMenu} toggleBtn={toggleBtn} />
+        </div>
+        <nav className="hidden md:block text-lg" aria-label="main">
           <div className="space-x-8 flex">
             <Link href="/products/all" className="hover:text-violet-400 transition-colors">
               Catálogo
