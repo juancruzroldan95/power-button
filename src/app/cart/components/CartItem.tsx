@@ -18,12 +18,14 @@ export default function CartItem({ item, key }: CartItemProps) {
   }, [quantity]);
 
   return (
-    <li className="flex justify-between items-center border-b mb-8">
-      <Image className="m-10" alt={item.title} src={item.image} width={100} height={100} style={{ objectFit: 'contain' }} />
-      <h4 className="mx-10 font-bold">{item.title}</h4>
-      <p className="mx-10">${item.price}</p>
-      <Counter max={item.stock} counter={quantity} setCounter={setQuantity} />
-      <button className="pl-16" onClick={() => removeFromCart(item.slug)}>
+    <li className="flex justify-between items-center md:flex-row border-b mb-8">
+      <Image className="my-4 md:m-10" alt={item.title} src={item.image} width={100} height={100} style={{ objectFit: 'contain' }} />
+      <div className='flex flex-col md:flex-row md:items-center md:gap-20'>
+        <h4 className="font-bold md:ml-10">{item.title}</h4>
+        <p className="">${item.price}</p>
+        <Counter max={item.stock} counter={quantity} setCounter={setQuantity} />
+      </div>
+      <button className="md:ml-10" onClick={() => removeFromCart(item.slug)}>
         <RxCross2 />
       </button>
     </li>

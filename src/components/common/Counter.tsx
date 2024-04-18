@@ -20,7 +20,7 @@ export default function Counter({ max, counter, setCounter }: CounterProps) {
   return (
     <div className="flex gap-3">
       <Button onClick={decrease}> - </Button>
-      <p className="flex justify-center items-center">Unidades: {counter}</p>
+      <p className="flex flex-col justify-center items-center">Unidades: {counter}</p>
       <Button onClick={increase}> + </Button>
     </div>
   );
