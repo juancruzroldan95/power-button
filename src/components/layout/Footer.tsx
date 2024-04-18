@@ -1,14 +1,17 @@
-import Image from 'next/image';
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-violet-950 border-t mt-auto py-4 text-violet-400 flex justify-around items-center">
-      <p>Desarrollado por Juan Cruz Roldan</p>
-      <div className="flex gap-2">
-        <p>Powered by</p>
-        <Image src="/next.svg" alt="Next Logo" width={50} height={50} />
-      </div>
+    <footer id="footer" className="w-full mt-auto bg-violet-950 border-t text-violet-400">
+      <section className='xl:max-w-7xl m-auto px-6 py-4 text-center md:flex justify-between items-center'>
+        <p>Made with 🤎 by <Link href="https://github.com/juancruzroldan95" className='underline font-bold'>Juan Cruz Roldan</Link>.</p>
+        <div className="hidden md:flex gap-2">
+          <p>Powered by</p>
+          <Image src="/next.svg" alt="Next Logo" width={50} height={50} />
+        </div>
+      </section>
     </footer>
   );
 }

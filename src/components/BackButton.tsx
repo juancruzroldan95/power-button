@@ -11,7 +11,7 @@ export default function BackButton() {
   };
 
   return (
-    <Button className="w-full mt-8" onClick={handleBackButton}>
+    <Button className="w-full py-2 mt-8" onClick={handleBackButton}>
       Volver
     </Button>
   );

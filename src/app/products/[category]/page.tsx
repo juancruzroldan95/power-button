@@ -25,10 +25,10 @@ export default function ProductsCategory({ params }: ProductsCategoryProps) {
 
   return (
     <main className="container m-auto">
-      <h2 className="text-7xl font-bold uppercase my-10 border-b pb-4">Productos</h2>
-      <div className="flex gap-10">
+      <h2 className="text-5xl px-6 text-center font-bold uppercase my-10 border-b pb-4 md:text-7xl md:text-left">Productos</h2>
+      <div className="md:flex gap-10 px-6">
         <CategoriesMenu />
-        <Suspense fallback={<h2>🌀 Loading...</h2>}>
+        <Suspense fallback={<h2 className='text-center my-40'>🌀 Loading...</h2>}>
           <ProductList category={category} />
         </Suspense>
       </div>

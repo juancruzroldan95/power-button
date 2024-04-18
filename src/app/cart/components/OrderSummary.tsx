@@ -69,11 +69,11 @@ export default function OrderSummary() {
     <div>
       {totalAmount() !== 0 ? (
         <div>
-          <aside className="flex flex-col gap-3 px-16 py-8">
+          <div className="flex flex-col gap-3 px-16 py-8">
             <h2 className="text-xl border-b">Resúmen de compra</h2>
             <h3>Total: ${totalAmount()}</h3>
-            <Button onClick={handleCheckout}>Generar orden de compra</Button>
-          </aside>
+            <Button onClick={handleCheckout} className='py-2'>Generar orden de compra</Button>
+          </div>
         </div>
       ) : null}
     </div>
