@@ -20,39 +20,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      <hr className="mx-auto bg-white w-1/2"></hr>
-
-      <section id="categories" className="p-6 my-12">
-        <h2 className="text-4xl font-bold text-center md:text-left mb-6 text-white">Comprá por categoría</h2>
+      <section id="categories" className="p-6 pt-12 bg-neutral-900">
+        <h2 className="text-4xl font-bold text-center mb-6 text-white">Comprá por categoría</h2>
         <ul className="list-none mx-auto my-12 flex flex-col md:flex-row items-center gap-8">
           <li className="w-2/3 md:w-5/6 flex flex-col items-center">
             <Link href="/products/games">
-              <div className="border border-solid border-slate-300 py-6 px-2 rounded-3xl shadow-xl">
-                <Image alt="Games" src="/games.webp" height={500} width={500} />
-              </div>
+              <Image alt="Games" src="/games.webp" height={500} width={500} className="rounded-3xl shadow-xl" />
               <h3 className="text-3xl py-4 text-center">Juegos</h3>
             </Link>
           </li>
           <li className="w-2/3 md:w-5/6 flex flex-col items-center">
             <Link href="/products/consoles">
-              <div className="border border-solid border-slate-300 py-6 px-2 rounded-3xl shadow-xl">
-                <Image alt="Consoles" src="/consoles.webp" height={500} width={500} />
-              </div>
+              <Image alt="Consoles" src="/consoles.webp" height={500} width={500} className="rounded-3xl shadow-xl" />
               <h3 className="text-3xl py-4 text-center">Consolas</h3>
             </Link>
           </li>
           <li className="w-2/3 md:w-5/6 flex flex-col items-center">
             <Link href="/products/accessories">
-              <div className="border border-solid border-slate-300 py-6 px-2 rounded-3xl shadow-xl">
-                <Image alt="Accessories" src="/accessories.webp" height={500} width={500} />
-              </div>
+              <Image alt="Accessories" src="/accessories.webp" height={500} width={500} className="rounded-3xl shadow-xl" />
               <h3 className="text-3xl py-4 text-center">Accesorios</h3>
             </Link>
           </li>
         </ul>
       </section>
-
-      <hr className="mx-auto bg-white w-1/2"></hr>
 
       <section id="newsletter" className="p-6 my-12 text-center flex flex-col items-center">
         <h2 className="text-4xl font-bold mb-6 text-white">Newsletter</h2>
