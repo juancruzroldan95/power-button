@@ -8,7 +8,7 @@ type AddToCartButtonProps = {
 
 export default function AddToCartButton({ onClick }: AddToCartButtonProps) {
   return (
-    <Button className="w-full" onClick={onClick}>
+    <Button className="md:w-full p-2" onClick={onClick}>
       Agregar al carrito
     </Button>
   );

@@ -45,7 +45,7 @@ export default function QuantitySelector({ product }: QuantitySelectorProps) {
   };
 
   return (
-    <div className="">
+    <div className="flex flex-col mx-2">
       <Counter max={product.stock} counter={quantity} setCounter={setQuantity} />
       <AddToCartButton onClick={handleAddButton} />
     </div>

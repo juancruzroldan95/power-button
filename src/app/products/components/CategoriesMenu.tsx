@@ -13,7 +13,7 @@ const links = [
 export default function CategoriesMenu() {
   const pathname = usePathname();
   return (
-    <aside className="flex flex-col gap-3">
+    <aside className="flex justify-around align-center md:flex-col md:justify-normal gap-3">
       {links.map((link) => (
         <Link
           key={link.label}
