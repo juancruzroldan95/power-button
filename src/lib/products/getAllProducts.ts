@@ -1,11 +1,8 @@
+import { db } from "@/firebase/config"
+import { collection, getDocs } from "firebase/firestore"
+
 export default async function getAllProducts() {
-  if (process.env.BASE_URL) {
-    const res = await fetch(`${process.env.BASE_URL}/api/products`, { cache: 'no-store' });
-    if (!res.ok) throw new Error(res.statusText)
-    return res.json();
-  } else {
-    const res = await fetch(`api/products`, { cache: 'no-store' });
-    if (!res.ok) throw new Error(res.statusText)
-    return res.json();
-  }
+  const querySnapshot = await getDocs(collection(db, "products"));
+  const allProducts = querySnapshot.docs.map(doc => doc.data());
+  return allProducts;
 };

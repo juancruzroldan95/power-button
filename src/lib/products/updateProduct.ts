@@ -1,5 +1,7 @@
-import { storage } from '@/firebase/config';
+import { db, storage } from '@/firebase/config';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { doc, updateDoc, getDoc } from "firebase/firestore";
+
 
 export default async function updateProduct(slug: string, values: Product, file?: File) {
   let body = values;
@@ -18,14 +20,8 @@ export default async function updateProduct(slug: string, values: Product, file?
     const fileURL = await getDownloadURL(fileSnap.ref);
     body = { ...values, image: fileURL };
   }
-  const res = await fetch(`api/products/detail/${slug}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  });
 
-  if (!res.ok) throw new Error(res.statusText)
-  return res.json();
+  await updateDoc(doc(db, "products", slug), body);
+  const updatedDocSnap = await getDoc(doc(db, "products", slug));
+  return updatedDocSnap.data();
 }

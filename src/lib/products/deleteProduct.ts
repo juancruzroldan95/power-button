@@ -1,10 +1,9 @@
+import { db } from '@/firebase/config';
+import { collection, doc, deleteDoc, getDocs } from "firebase/firestore";
+
 export default async function deleteProduct(slug: string) {
-  const res = await fetch(`api/products/detail/${slug}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-  if (!res.ok) throw new Error(res.statusText)
-  return res.json();
+  await deleteDoc(doc(db, "products", slug));
+  const querySnapshot = await getDocs(collection(db, "products"));
+  const remainingProducts = querySnapshot.docs.map(doc => doc.data());
+  return remainingProducts;
 }

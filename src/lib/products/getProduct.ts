@@ -1,12 +1,12 @@
-export default async function getProductDetail(slug: string) {
-  if (process.env.BASE_URL) {
-    const res = await fetch(`${process.env.BASE_URL}/api/products/detail/${slug}`, { cache: 'no-store' })
-    if (!res.ok) throw new Error(res.statusText)
-    return res.json();
-  } else {
-    const res = await fetch(`api/products/detail/${slug}`, { cache: 'no-store' })
-    if (!res.ok) throw new Error(res.statusText)
-    return res.json();
+import { db } from "@/firebase/config"
+import { doc, getDoc } from "firebase/firestore";
 
+export default async function getProductDetail(slug: string) {
+  const docSnap = await getDoc(doc(db, "products", slug));
+  if (docSnap.exists()) {
+    return docSnap.data();
+  } else {
+    console.log(`Product with slug ${slug} not found.`);
+    return undefined;
   }
 }
