@@ -1,11 +1,8 @@
 export default async function getAllOrders() {
-  if (process.env.BASE_URL) {
-    const res = await fetch(`${process.env.BASE_URL}/api/orders/`, { cache: 'no-store' });
-    if (!res.ok) throw new Error(res.statusText)
-    return res.json();
-  } else {
-    const res = await fetch(`api/orders/`, { cache: 'no-store' });
-    if (!res.ok) throw new Error(res.statusText)
-    return res.json();
-  }
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
+  const res = await fetch(`${BASE_URL}/api/orders/`, { cache: 'no-store' });
+  if (!res.ok) throw new Error(res.statusText);
+
+  return res.json();
 };
