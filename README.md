@@ -1,6 +1,6 @@
 # Power Button  
 
-**Final Project of the Next.js course @ Coderhouse**  
+**Final Project of the Next.js course at Coderhouse**  
 
 Power Button is an e-commerce application built with Next.js. It integrates authentication services and databases and strongly focuses on SEO optimization and performance.  
 
